@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,10 +14,13 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView xmlTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        xmlTextView = (TextView) findViewById(R.id.xmlTextView);
         DownloadData downloadData = new DownloadData();
         downloadData.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml");
     }
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             Log.d("DownloadData", "Result was" + result);
+            xmlTextView.setText(mFileContents);
         }
 
         private String downloadXMLFile(String urlPath) {
