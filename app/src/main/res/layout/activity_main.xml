@@ -10,9 +10,23 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.epicodus.toptendownloader.MainActivity">
 
-    <TextView
-        android:text="Hello World!"
-        android:id="@+id/xmlTextView"
+    <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Parse XMl File"
+        android:id="@+id/buttonParse"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/xmlListView"
+        android:layout_below="@+id/buttonParse"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentRight="@id/buttonParse"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false" />
 </RelativeLayout>
