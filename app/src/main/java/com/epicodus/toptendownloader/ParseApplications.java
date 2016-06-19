@@ -43,8 +43,8 @@ public class ParseApplications {
                         if(tagName.equalsIgnoreCase("entry")) {
                             inEntry = true;
                             currentRecord = new Application();
-                            break;
                         }
+                        break;
                     case XmlPullParser.END_TAG:
                         Log.d("ParseApplications", "Ending tag for " + tagName);
                         break;
@@ -54,10 +54,10 @@ public class ParseApplications {
                 }
                 eventType = xpp.next();
             }
-            return true;
         } catch(Exception e) {
             status = false;
             e.printStackTrace();
         }
+        return true;
     }
 }

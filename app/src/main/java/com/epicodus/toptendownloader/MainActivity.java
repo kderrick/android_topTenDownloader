@@ -17,6 +17,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String mFileContents;
     private Button buttonParse;
     private ListView xmlListView;
 
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                TODO: ADD PARSE ACTIVATION CODE
+                ParseApplications parseApplications = new ParseApplications(mFileContents);
+                parseApplications.process();
             }
         });
         DownloadData downloadData = new DownloadData();
@@ -37,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class DownloadData extends AsyncTask<String, Void, String> {
-
-        private String mFileContents;
 
         @Override
         protected String doInBackground(String... params) {
