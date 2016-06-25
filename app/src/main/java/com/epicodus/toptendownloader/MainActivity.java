@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonParse = (Button) findViewById(R.id.buttonParse);
-        xmlListView = (ListView) findViewById(R.id.xmlListView);
+        listApps = (ListView) findViewById(R.id.xmlListView);
         buttonParse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 ArrayAdapter<Application> arrayAdapter = new ArrayAdapter<Application>(
                         MainActivity.this, R.layout.list_item, parseApplications.getApplications());
                 listApps.setAdapter(arrayAdapter);
-                )
             }
         });
         DownloadData downloadData = new DownloadData();
